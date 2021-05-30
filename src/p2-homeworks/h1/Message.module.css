@@ -1,0 +1,41 @@
+.wrapper {
+    display: flex;
+    align-items: flex-end;
+    justify-content: space-between;
+    width: 400px;
+    padding: 5px 10px;
+    background-color: chartreuse;
+}
+.ava {
+    width: 50px;
+    margin-right: 10px;
+    border-radius: 50%;
+}
+.message {
+    display: flex;
+    justify-content: space-between;
+    width: 320px;
+    padding: 10px;
+    border-radius: 8px;
+    background-color: indigo;
+}
+.bodyOfMessage {
+    font-size: 20px;
+    color: aliceblue;
+}
+.name {
+    display: block;
+    color: cadetblue;
+}
+.text {
+    display: block;
+    color: aliceblue;
+}
+.timeOfMessage {
+    display: flex;
+    align-items: flex-end;
+    color: darkgrey;
+}
+.timeOfMessage span {
+    height: 15px;
+}
