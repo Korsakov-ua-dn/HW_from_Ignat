@@ -1,41 +1,41 @@
 .wrapper {
     display: flex;
     align-items: flex-end;
-    justify-content: space-between;
-    width: 400px;
-    padding: 5px 10px;
-    background-color: chartreuse;
+    max-width: 400px;
+    margin: 10px;
 }
 .ava {
     width: 50px;
-    margin-right: 10px;
+    /* margin-right: 10px; */
     border-radius: 50%;
+}
+.triangle  {
+    min-height: 15px;
+    min-width: 15px;
+    background: radial-gradient(circle at 0 0, rgba(0, 0, 0, 0) 15px, rgba(215, 167, 250, 0.5) 0);
 }
 .message {
     display: flex;
     justify-content: space-between;
-    width: 320px;
     padding: 10px;
-    border-radius: 8px;
-    background-color: indigo;
+    border-radius: 8px 8px 8px 0;
+    background-color: rgba(215, 167, 250, 0.5);
 }
 .bodyOfMessage {
     font-size: 20px;
-    color: aliceblue;
+    color: darkslategray;
 }
 .name {
     display: block;
-    color: cadetblue;
+    color: darkviolet;
 }
 .text {
     display: block;
-    color: aliceblue;
+    color: darkslategray;
+    word-wrap: break-word;
 }
 .timeOfMessage {
     display: flex;
     align-items: flex-end;
     color: darkgrey;
-}
-.timeOfMessage span {
-    height: 15px;
 }
