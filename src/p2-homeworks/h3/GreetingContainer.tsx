@@ -25,9 +25,8 @@ const GreetingContainer: React.FC<GreetingContainerPropsType> = ({users, addUser
             setError(true)
         }
         setName(e.currentTarget.value) // need to fix
-        console.log(name);
-        
     }
+    
     const addUser = (name: string) => {
         alert(`Hello ${name} !`) // need to fix
     }
