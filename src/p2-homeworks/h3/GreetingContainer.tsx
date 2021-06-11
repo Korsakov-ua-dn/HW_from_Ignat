@@ -1,4 +1,4 @@
-import React, {ChangeEvent, useState} from 'react'
+import React, {ChangeEvent, KeyboardEvent, useState} from 'react'
 import Greeting from './Greeting'
 
 type UserType = {
@@ -21,23 +21,31 @@ const GreetingContainer: React.FC<GreetingContainerPropsType> = ({users, addUser
     const [error, setError] = useState<boolean>(true) // need to fix any
 
     const setNameCallback = (e: ChangeEvent<HTMLInputElement>) => { // need to fix any
-        console.log(e.currentTarget.value.trim())
         if (e.currentTarget.value.trim() === '') {
             setName('')
             setError(true)
+        } else {
+            setError(false)
+            setName(e.currentTarget.value) // need to fix
         }
-        setError(false)
-        setName(e.currentTarget.value) // need to fix
     }
     
     const addUser = () => {
         if (!error) {
-            addUserCallback(name)
+            addUserCallback(name.trim())
             alert(`Hello ${name} !`) // need to fix
+            setName('')
+            setError(true)
         }
     }
 
     const totalUsers = users.length // need to fix
+
+    const onKeyPressHandler = (e: KeyboardEvent<HTMLInputElement>) => {
+        if(e.key === 'Enter') {
+            addUser()
+        }
+    }
 
     return (
         <Greeting
@@ -46,6 +54,7 @@ const GreetingContainer: React.FC<GreetingContainerPropsType> = ({users, addUser
             addUser={addUser}
             error={error}
             totalUsers={totalUsers}
+            onKeyPressHandler={onKeyPressHandler}
         />
     )
 }

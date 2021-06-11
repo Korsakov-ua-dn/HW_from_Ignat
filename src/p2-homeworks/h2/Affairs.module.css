@@ -1,3 +1,23 @@
-.someClass {
+.wrapper {
+    padding: 20px;
+}
+.item {
+    display: flex;
+    justify-content: space-between;
+    width: 300px;
+}
+.item span{
+    margin-bottom: 10px;
+}
+.item button {
+    margin-bottom: 10px;
+}
 
+.btn_block {
+    width: 300px;
+    display: flex;
+    justify-content: space-between;
+}
+.btn_block button {
+    width: 60px;
 }

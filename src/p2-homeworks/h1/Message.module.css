@@ -2,11 +2,10 @@
     display: flex;
     align-items: flex-end;
     max-width: 400px;
-    margin: 10px;
+    margin: 20px;
 }
 .ava {
     width: 50px;
-    /* margin-right: 10px; */
     border-radius: 50%;
 }
 .triangle  {
@@ -27,11 +26,11 @@
 }
 .name {
     display: block;
-    color: darkviolet;
+    color: cadetblue;
 }
 .text {
     display: block;
-    color: darkslategray;
+    color: azure;
     word-wrap: break-word;
 }
 .timeOfMessage {

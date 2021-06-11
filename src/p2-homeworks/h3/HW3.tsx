@@ -14,6 +14,8 @@ function HW3() {
 
     const addUserCallback = (name: string) => { // need to fix any
         setUsers([{name, _id: v1()}, ...users]) // need to fix
+        // console.log(users); ?????
+        
     }
 
     return (
