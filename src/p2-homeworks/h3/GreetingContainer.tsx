@@ -18,12 +18,12 @@ type GreetingContainerPropsType = {
 // уровень локальной логики
 const GreetingContainer: React.FC<GreetingContainerPropsType> = ({users, addUserCallback}) => { // деструктуризация пропсов
     const [name, setName] = useState<string>('') // need to fix any
-    const [error, setError] = useState<boolean>(true) // need to fix any
+    const [error, setError] = useState<boolean>(false) // need to fix any
 
     const setNameCallback = (e: ChangeEvent<HTMLInputElement>) => { // need to fix any
         if (e.currentTarget.value.trim() === '') {
-            setName('')
             setError(true)
+            setName('')
         } else {
             setError(false)
             setName(e.currentTarget.value) // need to fix
@@ -31,11 +31,11 @@ const GreetingContainer: React.FC<GreetingContainerPropsType> = ({users, addUser
     }
     
     const addUser = () => {
-        if (!error) {
+        if (!error && name) {
             addUserCallback(name.trim())
             alert(`Hello ${name} !`) // need to fix
             setName('')
-            setError(true)
+            setError(false)
         }
     }
 
