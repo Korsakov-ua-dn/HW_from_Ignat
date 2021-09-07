@@ -1,3 +1,5 @@
+import { Dispatch } from "redux"
+
 const initState = {
     isLoading: false
 }
@@ -12,5 +14,11 @@ export const loadingReducer = (state = initState, action: LoadingActionType): ty
 }
 
 export const loadingAC = (isLoading: boolean) => ({type: "SET_LOADING", isLoading} as const) // fix any
+export const loading = (dispatch: Dispatch) => {
+    dispatch(loadingAC(true))
+        setTimeout(() => {
+            dispatch(loadingAC(false))
+        }, 2000)
+}
 
 type LoadingActionType = ReturnType<typeof loadingAC>
