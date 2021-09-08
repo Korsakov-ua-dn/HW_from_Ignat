@@ -1,10 +1,11 @@
-import { loadingReducer } from './loadingReducer'
-import { createStore, combineReducers, applyMiddleware } from 'redux'
+import {loadingReducer} from './loadingReducer'
+import {createStore, combineReducers, applyMiddleware} from 'redux'
 import thunk from 'redux-thunk'
+import {themeReducer} from '../../h12/bll/themeReducer'
 
 const reducers = combineReducers({
     loading: loadingReducer,
-
+    theme: themeReducer,
 })
 
 const store = createStore(reducers, applyMiddleware(thunk))
