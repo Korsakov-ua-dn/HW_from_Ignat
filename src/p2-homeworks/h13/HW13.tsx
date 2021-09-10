@@ -8,8 +8,18 @@ const Request = () => {
 
     const setSucces = () => {
         requestApi.setSucces(isChecked)
-            .then(res => setContent(res.data.errorText))
-            .catch(error => console.log(error))
+            .then(res => {
+                if (res.status === 200) {
+
+                    setContent(res.data.errorText)
+                } else {
+                    console.log(res.data.errorText);
+
+                }
+            })
+            .catch(error => {
+                setContent(error.response.data.errorText)
+            })
     }
 
     return (
@@ -19,7 +29,7 @@ const Request = () => {
             <hr />
             <div>{content}</div>
             <button onClick={setSucces}>Click</button>
-            <input type="checkbox" checked={isChecked} onChange={(e) => setChecked(e.currentTarget.checked)}/>
+            <input type="checkbox" checked={isChecked} onChange={(e) => setChecked(e.currentTarget.checked)} />
         </div>
     )
 }
